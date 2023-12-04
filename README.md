@@ -45,7 +45,7 @@ aws eks update-kubeconfig --region us-west-2 --name eks-supermarket-cluster
 2. Setup external secrets operater for secrets handling (AWS secrets managers)
 3. Implement Network Policy.
 4. Run CIS benchmarks for Compliance Auditing
-5. Implement TLS for ELB/ingress endpoints
+5. Implement TLS for ELB/ingress endpoints using ACM (DNS required)
 6. Implement IAC for cluster provisioning.
 7. Scan IAC code using policy as code tools like checkov to ensure cluster tags and best practices are following.
 
