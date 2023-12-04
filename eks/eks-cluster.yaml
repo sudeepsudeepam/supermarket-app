@@ -1,0 +1,37 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: eks-supermarket-cluster
+  region: eu-west-2
+
+vpc:
+  id: "vpc-037e29ec8d324badf"
+  cidr: "10.0.0.0/16"
+  subnets:
+    public:
+      eu-west-2a: {id: subnet-0eea88c0faa8241d4}
+      eu-west-2b: {id: subnet-05ff592bd0095ad75}
+
+managedNodeGroups:
+- name: ng-app
+  instanceType: t3.small
+  labels: {role: builders}
+  minSize: 2
+  maxSize: 4
+  ssh:
+    allow: true
+    publicKeyName: ekskey
+  tags:
+    Name: ng-db
+# - name: ng-spot
+#   instanceType: t3.medium
+#   labels: { role: builders }
+#   minSize: 3
+#   maxSize: 6
+#   spot: true
+#   ssh: 
+#     allow: true
+#     publicKeyName: techiescamp
+#   tags:
+#     Name: ng-spot
