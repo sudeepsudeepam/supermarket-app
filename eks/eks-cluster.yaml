@@ -2,7 +2,7 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: eks-supermarket-cluster
+  name: supermarket-app
   region: eu-west-2
 
 vpc:
