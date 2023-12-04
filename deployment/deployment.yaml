@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: supermarket-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: supermarket-app
+  template:
+    metadata:
+      labels:
+        app: supermarket-app
+    spec:
+      containers:
+      - name: supermarket-app
+        image: 547223838688.dkr.ecr.eu-west-2.amazonaws.com/supermarket-app:1.0.0
+        ports:
+        - containerPort: 8080
