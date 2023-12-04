@@ -1,5 +1,12 @@
 # supermarket-app
 
+### Deployment of Supermarket App in AWS EKS Cluster ###
+
+Creating VPC with Subnets
+Setup EKS Cluster and worker nodes - have used eksctl
+Setup ECR Repo - supermarketapp to store the docker images
+Kubernetes deployment
+
 ## Build Docker Image
 
 ```
@@ -39,6 +46,9 @@ Update Kubeconfig
 aws eks update-kubeconfig --region us-west-2 --name eks-supermarket-cluster
 ```
 
+
+Best Practices that can be followed for Security  (Not Implemented in current deployment) 
+
 ## Cluster Security
 
 1. Setup RBAC - IAM integration for different permission levels
@@ -54,4 +64,4 @@ aws eks update-kubeconfig --region us-west-2 --name eks-supermarket-cluster
 
 1. Implement linting (Hadolint)
 2. Implement Contianer Vulnerability scanning (Trivy)
-3. Use distroless minimal base images.
+3. Use distroless minimal base images. 
